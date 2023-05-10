@@ -1,0 +1,16 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{product.title}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <img mat-card-md-image [src]="product.image" alt="product image"/>
+    <p>Category: {{product.category}}</p>
+    <p>Description: {{product.description}}</p>
+    <p>Rating: {{product.rating.rate}} by {{product.rating.count}} users</p>
+  </mat-card-content>
+  <mat-card-actions style="justify-content: space-evenly">Price: {{product.price}}
+    <button mat-raised-button (click)="onAdd()">Add</button>
+    <button mat-raised-button (click)="onRemove()">Remove</button>
+    <button mat-raised-button routerLink="/products">Back</button>
+  </mat-card-actions>
+</mat-card>
