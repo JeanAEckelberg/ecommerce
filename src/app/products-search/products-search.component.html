@@ -1,1 +1,9 @@
-<p>products-search works!</p>
+<form>
+  <mat-form-field style="padding: 4px">
+    <mat-label>
+      Search
+    </mat-label>
+    <input matInput [(ngModel)]="searchterm" name="searchstring">
+  </mat-form-field>
+  <button style="padding: 4px" mat-raised-button color="primary" (click)="onSearch()">Search</button>
+</form>

@@ -1,0 +1,16 @@
+<div style="width: 100%; justify-content: space-evenly">
+  <span style="padding: 4px">
+    <button mat-raised-button routerLink="/orders">
+      Order History
+    </button>
+  </span>
+  <span style="padding: 4px">
+    <button mat-raised-button routerLink="/cart">Cart: {{cartValue}}</button>
+  </span>
+  <span style="padding: 4px">
+    <button mat-raised-button routerLink="/products">Product List</button>
+  </span>
+</div>
+<div style="padding: 4px">
+  <app-products-search></app-products-search>
+</div>

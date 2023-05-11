@@ -14,6 +14,7 @@ const routes: Routes = [
   {path: 'product-detail', component: ProductsDetailComponent},
   {path: 'cart', component: ShoppingCartComponent},
   {path: 'orders', component: OrderHistoryComponent},
+  {path: '', redirectTo: '/login', pathMatch: 'full'},
 ];
 
 @NgModule({

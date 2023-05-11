@@ -11,11 +11,11 @@ export class OrderServiceService {
   constructor(private http: HttpClient) { }
 
   addOrder(order: Order): Observable<Order> {
-    return this.http.post<Order>(`https://ecomerce-11d12-default-rtdb.firebaseio.com/order.json`, order);
+    return this.http.post<Order>(`https://ecomerce-11d12-default-rtdb.firebaseio.com/orders.json`, order);
   }
 
   getOrders(): Observable<Order[]> {
-    return this.http.get('https://ecomerce-11d12-default-rtdb.firebaseio.com/order.json').pipe(map(
+    return this.http.get('https://ecomerce-11d12-default-rtdb.firebaseio.com/orders.json').pipe(map(
       responseData => [ ... Object.values(responseData)]
     ));
   }

@@ -12,7 +12,6 @@ import {Router} from "@angular/router";
 })
 export class ProductsListComponent implements OnInit {
   products: Product[] = [];
-  cartValue: number = 0;
   private cartProducts: Product[] = []
 
   constructor(private productService: ProductServiceService,
@@ -22,19 +21,16 @@ export class ProductsListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.productService.getProducts().pipe(first()).subscribe(x => this.products = x);
+    this.tempService.getCurrentProducts$().subscribe(x => {if(x) this.products = x});
     this.tempService.getCurrentCart$().pipe(first()).subscribe(x => {
       if (x) {
         this.cartProducts = x;
-        this.cartValue = 0;
-        x.forEach(prod => this.cartValue += prod.price)
       }
     })
   }
 
   addToCart(product: Product) {
     this.cartProducts.push(product)
-    this.cartValue += product.price;
     this.tempService.setCurrentCart$(this.cartProducts)
   }
 

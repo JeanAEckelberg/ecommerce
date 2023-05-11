@@ -1,15 +1,4 @@
-<div style="width: 100%; justify-content: space-evenly">
-  <span style="padding: 4px">
-    <button mat-raised-button routerLink="/orders">
-      Order History
-    </button>
-  </span>
-  <span style="padding: 4px">
-    <button mat-raised-button routerLink="/cart">Cart: {{cartValue}}</button>
-  </span>
-</div>
-<app-products-search></app-products-search>
-
+<app-menu-bar></app-menu-bar>
 <mat-card *ngFor="let product of products">
   <a style="text-decoration: none !important; color: white" (click)="selectProduct(product)">
     <mat-card-header>
@@ -22,7 +11,7 @@
       <p>Rating: {{product.rating.rate}} by {{product.rating.count}} users</p>
     </mat-card-content>
   </a>
-  <mat-card-actions style="justify-content: space-evenly">Price: {{product.price}}
+  <mat-card-actions style="justify-content: space-evenly">Price: ${{product.price.toFixed(2)}}
     <button mat-raised-button (click)="addToCart(product)">Add</button>
   </mat-card-actions>
 </mat-card>

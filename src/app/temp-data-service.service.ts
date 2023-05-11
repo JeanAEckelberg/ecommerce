@@ -13,6 +13,7 @@ export class TempDataServiceService {
   private _currentUser: User = {} as User;
   private _currentOrder: Order = {} as Order;
   private _currentProduct: Product = {} as Product;
+  private _currentProducts$: BehaviorSubject<Product[] | undefined> = new BehaviorSubject<Product[] | undefined>(undefined)
   private _currentCart$: BehaviorSubject<Product[] | undefined> = new BehaviorSubject<Product[] | undefined>(undefined);
 
   constructor() { }
@@ -39,6 +40,14 @@ export class TempDataServiceService {
 
   set currentProduct(value: Product) {
     this._currentProduct = value;
+  }
+
+  getCurrentProducts$(): Observable<Product[] | undefined> {
+    return this._currentProducts$.asObservable()
+  }
+
+  setCurrentProducts$(value: Product[]) {
+    this._currentProducts$.next(value);
   }
 
   getCurrentCart$(): Observable<Product[] | undefined> {

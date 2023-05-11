@@ -19,6 +19,9 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatCardModule} from "@angular/material/card";
 import {MatTabsModule} from "@angular/material/tabs";
+import { MenuBarComponent } from './menu-bar/menu-bar.component';
+import { OrderDetailComponent } from './order-detail/order-detail.component';
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
 
 @NgModule({
   declarations: [
@@ -29,7 +32,9 @@ import {MatTabsModule} from "@angular/material/tabs";
     ProductsDetailComponent,
     ProductsSearchComponent,
     ShoppingCartComponent,
-    OrderHistoryComponent
+    OrderHistoryComponent,
+    MenuBarComponent,
+    OrderDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +49,7 @@ import {MatTabsModule} from "@angular/material/tabs";
     MatInputModule,
     MatCardModule,
     MatTabsModule,
+    MatButtonToggleModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

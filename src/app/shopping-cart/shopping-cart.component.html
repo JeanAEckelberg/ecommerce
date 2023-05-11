@@ -1,1 +1,19 @@
-<p>shopping-cart works!</p>
+<app-menu-bar></app-menu-bar>
+<mat-card *ngFor="let product of cartProducts">
+  <a style="text-decoration: none !important; color: white" (click)="selectProduct(product)">
+    <mat-card-header>
+      <mat-card-title>{{product.title}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <img mat-card-md-image [src]="product.image" alt="product image"/>
+      <p>Category: {{product.category}}</p>
+      <p>Description: {{product.description}}</p>
+      <p>Rating: {{product.rating.rate}} by {{product.rating.count}} users</p>
+    </mat-card-content>
+  </a>
+  <mat-card-actions style="justify-content: space-evenly">Price: ${{product.price.toFixed(2)}}
+  </mat-card-actions>
+</mat-card>
+<button mat-raised-button color="accent" (click)="checkout();">
+  Checkout
+</button>
